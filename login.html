@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Ombro Amigo</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Login - Projeto Ombro Amigo</h1>
+    </header>
+    <main>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit" class="btn">Entrar</button>
+        </form>
+        <p id="error" class="error"></p>
+    </main>
+    <script>
+        const form = document.getElementById('loginForm');
+        const error = document.getElementById('error');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = form.username.value;
+            const password = form.password.value;
+            if(username === 'usuario' && password === 'senha123') {
+                window.location.href = 'dashboard.html';
+            } else {
+                error.textContent = 'Usuário ou senha incorretos.';
+            }
+        });
+    </script>
+</body>
+</html>
